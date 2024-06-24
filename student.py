@@ -10,6 +10,21 @@ class Student:
         self.naughty_list = False
 
 
+    def test_email(self):
+        student = Student('John', 'Doe')
+
+        self.assertEqual(student.email, 'john.doe@email.com')
+
+
     @property
     def full_name(self):
         return f"{self._first_name} {self._last_name}"
+
+
+    @property
+    def email(self):
+        return f"{self._first_name.lower()}.{self._last_name.lower()}@email.com"
+
+    
+    def alert_santa(self):
+        self.naughty_list = True
